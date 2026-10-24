@@ -1,0 +1,263 @@
+<!-- ============================================
+     m3-resistencias.html: Módulo 3 · Resistencias
+     ============================================ -->
+
+<div class="modulo-cabecera">
+  <span class="insignia">3</span>
+  <div>
+    <h1>Resistencias</h1>
+    <p>Qué es una resistencia, código de colores de 4 bandas, serie y paralelo.</p>
+  </div>
+</div>
+
+<section class="tarjeta">
+  <h2>¿Qué es una resistencia?</h2>
+  <div class="aviso">
+    <strong>Definición</strong>
+    Una resistencia es un componente que se opone al paso de la corriente eléctrica. Su valor se mide en <strong>ohmios (Ω)</strong>.
+  </div>
+  <p>En un circuito se usa para limitar la corriente, dividir voltajes o convertir energía eléctrica en calor.</p>
+  <div class="tabla-contenedor">
+    <table>
+      <thead>
+        <tr><th>Magnitud</th><th>Símbolo</th><th>Unidad</th><th>Relación</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Resistencia</td><td class="mono">R</td><td>ohmio (Ω)</td><td>Se opone a la corriente</td></tr>
+        <tr><td>Voltaje</td><td class="mono">V</td><td>voltio (V)</td><td>Diferencia de potencial entre sus extremos</td></tr>
+        <tr><td>Corriente</td><td class="mono">I</td><td>amperio (A)</td><td>Carga que pasa por segundo</td></tr>
+        <tr><td>Potencia</td><td class="mono">P</td><td>vatio (W)</td><td class="mono">P = V · I = I² · R = V² / R</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figure class="figura">
+    <svg viewBox="0 0 520 120" role="img" aria-label="Símbolo de resistencia: un rectángulo entre dos cables">
+      <line x1="40" y1="60" x2="170" y2="60" stroke="#1e293b" stroke-width="4"/>
+      <rect x="170" y="38" width="180" height="44" fill="#fef3c7" stroke="#1e293b" stroke-width="4"/>
+      <line x1="350" y1="60" x2="480" y2="60" stroke="#1e293b" stroke-width="4"/>
+      <text x="260" y="28" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#1e293b">R</text>
+    </svg>
+    <figcaption>Símbolo más usado en esquemas: un rectángulo. En algunos libros aparece el zig-zag.</figcaption>
+  </figure>
+</section>
+
+<section class="tarjeta">
+  <h2>Código de colores de 4 bandas</h2>
+  <p>Las resistencias pequeñas no llevan el número escrito: usan <strong>cuatro anillos de color</strong>.</p>
+  <ol>
+    <li><strong>1.ª banda:</strong> primer dígito.</li>
+    <li><strong>2.ª banda:</strong> segundo dígito.</li>
+    <li><strong>3.ª banda:</strong> multiplicador (cuántos ceros, o si se divide).</li>
+    <li><strong>4.ª banda:</strong> tolerancia (qué tanto puede desviarse el valor real).</li>
+  </ol>
+  <div class="formula">$$R = (10\cdot d_1 + d_2)\times 10^{m}$$</div>
+  <p class="formula-leyenda">d₁ y d₂ son los dígitos de las dos primeras bandas. El multiplicador se expresa como potencia de 10. La tolerancia no entra en el cálculo del valor nominal.</p>
+
+  <div class="tabla-contenedor">
+    <table>
+      <thead>
+        <tr><th>Color</th><th>Dígito</th><th>Multiplicador</th><th>Tolerancia</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="muestra-color" style="background:#111827"></span>Negro</td><td class="mono">0</td><td class="mono">× 10⁰ = × 1</td><td>—</td></tr>
+        <tr><td><span class="muestra-color" style="background:#92400e"></span>Marrón</td><td class="mono">1</td><td class="mono">× 10¹ = × 10</td><td class="mono">±1 %</td></tr>
+        <tr><td><span class="muestra-color" style="background:#dc2626"></span>Rojo</td><td class="mono">2</td><td class="mono">× 10² = × 100</td><td class="mono">±2 %</td></tr>
+        <tr><td><span class="muestra-color" style="background:#ea580c"></span>Naranja</td><td class="mono">3</td><td class="mono">× 10³ = × 1 k</td><td>—</td></tr>
+        <tr><td><span class="muestra-color" style="background:#eab308"></span>Amarillo</td><td class="mono">4</td><td class="mono">× 10⁴ = × 10 k</td><td>—</td></tr>
+        <tr><td><span class="muestra-color" style="background:#16a34a"></span>Verde</td><td class="mono">5</td><td class="mono">× 10⁵ = × 100 k</td><td class="mono">±0.5 %</td></tr>
+        <tr><td><span class="muestra-color" style="background:#2563eb"></span>Azul</td><td class="mono">6</td><td class="mono">× 10⁶ = × 1 M</td><td class="mono">±0.25 %</td></tr>
+        <tr><td><span class="muestra-color" style="background:#7c3aed"></span>Violeta</td><td class="mono">7</td><td class="mono">× 10⁷ = × 10 M</td><td class="mono">±0.1 %</td></tr>
+        <tr><td><span class="muestra-color" style="background:#6b7280"></span>Gris</td><td class="mono">8</td><td class="mono">× 10⁸</td><td class="mono">±0.05 %</td></tr>
+        <tr><td><span class="muestra-color" style="background:#f8fafc;border-color:#94a3b8"></span>Blanco</td><td class="mono">9</td><td class="mono">× 10⁹</td><td>—</td></tr>
+        <tr><td><span class="muestra-color" style="background:#d4a017"></span>Oro</td><td>—</td><td class="mono">× 10⁻¹ = × 0.1</td><td class="mono">±5 %</td></tr>
+        <tr><td><span class="muestra-color" style="background:#c0c7d1"></span>Plata</td><td>—</td><td class="mono">× 10⁻² = × 0.01</td><td class="mono">±10 %</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="aviso ambar">
+    <strong>Cómo leerla</strong>
+    La banda de tolerancia (oro o plata, casi siempre) se pone a la derecha. Se lee de izquierda a derecha: dígito, dígito, multiplicador, tolerancia.
+  </div>
+
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Ejemplo resuelto: amarillo · violeta · rojo · oro</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso"><span class="rotulo">Datos.</span> 1.ª banda amarillo (4), 2.ª violeta (7), 3.ª rojo (×100), 4.ª oro (±5 %).</div></div>
+      <div class="paso"><span class="n">2</span><div class="contenido-paso"><span class="rotulo">Fórmula.</span> Valor = (10·d₁ + d₂) × multiplicador.</div></div>
+      <div class="paso"><span class="n">3</span><div class="contenido-paso"><span class="rotulo">Operaciones.</span> 47 × 100 = 4700 Ω = 4.7 kΩ. Rango: 4700 × 0.95 a 4700 × 1.05.
+        <div class="resultado">4.7 kΩ ± 5 % &nbsp;→&nbsp; entre 4465 Ω y 4935 Ω</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="tarjeta">
+  <h2>Herramienta: colores → valor</h2>
+  <p>Elige el color de cada banda. La resistencia se pinta y aparece el valor con su tolerancia.</p>
+  <div class="herramienta">
+    <h3>Resistencia de 4 bandas</h3>
+    <div class="figura" id="res-lienzo"></div>
+    <div class="campos-fila">
+      <div class="campo"><label for="res-b1">1.ª banda (dígito)</label><select id="res-b1"></select></div>
+      <div class="campo"><label for="res-b2">2.ª banda (dígito)</label><select id="res-b2"></select></div>
+      <div class="campo"><label for="res-b3">3.ª banda (multiplicador)</label><select id="res-b3"></select></div>
+      <div class="campo"><label for="res-b4">4.ª banda (tolerancia)</label><select id="res-b4"></select></div>
+    </div>
+    <div class="btn-grupo">
+      <button type="button" class="btn btn-suave" data-b1="amarillo" data-b2="violeta" data-b3="rojo" data-b4="oro">4.7 kΩ</button>
+      <button type="button" class="btn btn-suave" data-b1="marron" data-b2="negro" data-b3="rojo" data-b4="oro">1 kΩ</button>
+      <button type="button" class="btn btn-suave" data-b1="rojo" data-b2="rojo" data-b3="marron" data-b4="oro">220 Ω</button>
+      <button type="button" class="btn btn-suave" data-b1="naranja" data-b2="naranja" data-b3="negro" data-b4="oro">33 Ω</button>
+    </div>
+    <div class="mensaje-error" id="res-error" role="alert"></div>
+    <div class="salida" id="res-salida" style="font-family:inherit" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="tarjeta">
+  <h2>Herramienta inversa: valor → colores</h2>
+  <p>Escribe un valor comercial de dos cifras significativas y la tolerancia. La herramienta propone las 4 bandas.</p>
+  <div class="herramienta">
+    <h3>Del número a las bandas</h3>
+    <div class="campos-fila">
+      <div class="campo">
+        <label for="inv-val">Valor</label>
+        <input id="inv-val" type="text" inputmode="decimal" value="4.7" autocomplete="off">
+      </div>
+      <div class="campo">
+        <label for="inv-u">Unidad</label>
+        <select id="inv-u">
+          <option value="1">Ω</option>
+          <option value="1e3" selected>kΩ</option>
+          <option value="1e6">MΩ</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="inv-tol">Tolerancia</label>
+        <select id="inv-tol">
+          <option value="5" selected>±5 % (oro)</option>
+          <option value="10">±10 % (plata)</option>
+          <option value="1">±1 % (marrón)</option>
+          <option value="2">±2 % (rojo)</option>
+        </select>
+      </div>
+    </div>
+    <div class="mensaje-error" id="inv-error" role="alert"></div>
+    <div class="salida" id="inv-salida" style="font-family:inherit" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="tarjeta">
+  <h2>Serie y paralelo</h2>
+  <div class="aviso">
+    <strong>Serie</strong>
+    Las resistencias se conectan una a continuación de la otra. Pasa la <strong>misma corriente</strong>. Los voltajes se suman. La equivalente es la suma.
+  </div>
+  <div class="formula">$$R_{eq} = R_1 + R_2 + \cdots + R_n$$</div>
+  <figure class="figura">
+    <svg viewBox="0 0 520 90" role="img" aria-label="Dos resistencias en serie">
+      <line x1="20" y1="45" x2="80" y2="45" stroke="#1e293b" stroke-width="3"/>
+      <rect x="80" y="28" width="90" height="34" fill="#fef3c7" stroke="#1e293b" stroke-width="3"/>
+      <text x="125" y="22" text-anchor="middle" font-size="14" font-family="Inter, sans-serif" fill="#1e293b">R₁</text>
+      <line x1="170" y1="45" x2="230" y2="45" stroke="#1e293b" stroke-width="3"/>
+      <rect x="230" y="28" width="90" height="34" fill="#fef3c7" stroke="#1e293b" stroke-width="3"/>
+      <text x="275" y="22" text-anchor="middle" font-size="14" font-family="Inter, sans-serif" fill="#1e293b">R₂</text>
+      <line x1="320" y1="45" x2="500" y2="45" stroke="#1e293b" stroke-width="3"/>
+      <text x="410" y="70" text-anchor="middle" font-size="13" font-family="Inter, sans-serif" fill="#64748b">misma I · V se suman</text>
+    </svg>
+  </figure>
+
+  <div class="aviso">
+    <strong>Paralelo</strong>
+    Las resistencias se conectan entre los mismos dos puntos. Tienen el <strong>mismo voltaje</strong>. Las corrientes se suman. La equivalente es menor que la más pequeña.
+  </div>
+  <div class="formula">$$\frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2} + \cdots + \frac{1}{R_n}$$</div>
+  <p>Con dos resistencias:</p>
+  <div class="formula">$$R_{eq} = \frac{R_1 R_2}{R_1 + R_2}$$</div>
+  <figure class="figura">
+    <svg viewBox="0 0 420 150" role="img" aria-label="Dos resistencias en paralelo">
+      <line x1="40" y1="75" x2="120" y2="75" stroke="#1e293b" stroke-width="3"/>
+      <line x1="120" y1="30" x2="120" y2="120" stroke="#1e293b" stroke-width="3"/>
+      <rect x="150" y="14" width="90" height="32" fill="#fef3c7" stroke="#1e293b" stroke-width="3"/>
+      <text x="195" y="8" text-anchor="middle" font-size="14" font-family="Inter, sans-serif">R₁</text>
+      <line x1="120" y1="30" x2="150" y2="30" stroke="#1e293b" stroke-width="3"/>
+      <line x1="240" y1="30" x2="300" y2="30" stroke="#1e293b" stroke-width="3"/>
+      <rect x="150" y="104" width="90" height="32" fill="#fef3c7" stroke="#1e293b" stroke-width="3"/>
+      <text x="195" y="154" text-anchor="middle" font-size="14" font-family="Inter, sans-serif">R₂</text>
+      <line x1="120" y1="120" x2="150" y2="120" stroke="#1e293b" stroke-width="3"/>
+      <line x1="240" y1="120" x2="300" y2="120" stroke="#1e293b" stroke-width="3"/>
+      <line x1="300" y1="30" x2="300" y2="120" stroke="#1e293b" stroke-width="3"/>
+      <line x1="300" y1="75" x2="380" y2="75" stroke="#1e293b" stroke-width="3"/>
+    </svg>
+    <figcaption>En paralelo el voltaje es el mismo en R₁ y R₂.</figcaption>
+  </figure>
+
+  <div class="aviso ambar">
+    <strong>Circuito mixto</strong>
+    Combina serie y paralelo. Se resuelve por partes: primero las que están claramente en paralelo o en serie, hasta dejar una sola R<sub>eq</sub>.
+  </div>
+
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Ejemplo resuelto: serie</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso"><span class="rotulo">Datos.</span> R₁ = 100 Ω, R₂ = 220 Ω, R₃ = 180 Ω, todas en serie.</div></div>
+      <div class="paso"><span class="n">2</span><div class="contenido-paso"><span class="rotulo">Fórmula.</span> R<sub>eq</sub> = R₁ + R₂ + R₃</div></div>
+      <div class="paso"><span class="n">3</span><div class="contenido-paso"><span class="rotulo">Operaciones.</span> 100 + 220 + 180 = 500
+        <div class="resultado">R<sub>eq</sub> = 500 Ω</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Ejemplo resuelto: paralelo de dos</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso"><span class="rotulo">Datos.</span> R₁ = 12 Ω, R₂ = 6 Ω, en paralelo.</div></div>
+      <div class="paso"><span class="n">2</span><div class="contenido-paso"><span class="rotulo">Fórmula.</span> R<sub>eq</sub> = (R₁·R₂) / (R₁ + R₂)</div></div>
+      <div class="paso"><span class="n">3</span><div class="contenido-paso"><span class="rotulo">Operaciones.</span> (12 × 6) / (12 + 6) = 72 / 18 = 4
+        <div class="resultado">R<sub>eq</sub> = 4 Ω</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Ejemplo resuelto: mixto (R₁ en serie con R₂ ∥ R₃)</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso"><span class="rotulo">Datos.</span> R₁ = 8 Ω en serie con el paralelo de R₂ = 12 Ω y R₃ = 6 Ω.</div></div>
+      <div class="paso"><span class="n">2</span><div class="contenido-paso"><span class="rotulo">Paralelo.</span> R<sub>23</sub> = (12 × 6) / (12 + 6) = 4 Ω.</div></div>
+      <div class="paso"><span class="n">3</span><div class="contenido-paso"><span class="rotulo">Serie.</span> R<sub>eq</sub> = 8 + 4 = 12
+        <div class="resultado">R<sub>eq</sub> = 12 Ω</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="tarjeta">
+  <h2>Calculadora serie / paralelo</h2>
+  <p>Escribe de 2 a 4 resistencias (en ohmios). Elige si están en serie o en paralelo y verás el procedimiento.</p>
+  <div class="herramienta">
+    <h3>Resistencia equivalente</h3>
+    <div class="campo">
+      <label for="eq-modo">Conexión</label>
+      <select id="eq-modo">
+        <option value="serie">Serie (se suman)</option>
+        <option value="paralelo">Paralelo (se suman los inversos)</option>
+      </select>
+    </div>
+    <div class="campos-fila">
+      <div class="campo"><label for="eq-r1">R₁ (Ω)</label><input id="eq-r1" type="text" inputmode="decimal" value="100" autocomplete="off"></div>
+      <div class="campo"><label for="eq-r2">R₂ (Ω)</label><input id="eq-r2" type="text" inputmode="decimal" value="220" autocomplete="off"></div>
+      <div class="campo"><label for="eq-r3">R₃ (Ω) opcional</label><input id="eq-r3" type="text" inputmode="decimal" value="180" autocomplete="off"></div>
+      <div class="campo"><label for="eq-r4">R₄ (Ω) opcional</label><input id="eq-r4" type="text" inputmode="decimal" value="" autocomplete="off"></div>
+    </div>
+    <div class="btn-grupo">
+      <button type="button" class="btn btn-suave" data-modo="serie" data-r1="100" data-r2="220" data-r3="180" data-r4="">Ejemplo serie</button>
+      <button type="button" class="btn btn-suave" data-modo="paralelo" data-r1="12" data-r2="6" data-r3="" data-r4="">Ejemplo paralelo</button>
+    </div>
+    <div class="mensaje-error" id="eq-error" role="alert"></div>
+    <div class="salida" id="eq-salida" style="font-family:inherit" aria-live="polite"></div>
+  </div>
+</section>
+
+<div class="btn-grupo" style="margin-top:8px">
+  <a class="btn btn-suave" href="#m2-coulomb">← Ley de Coulomb</a>
+  <a class="btn" href="#m4-ohm">Siguiente: Ley de Ohm →</a>
+</div>

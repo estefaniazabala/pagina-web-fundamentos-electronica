@@ -1,0 +1,115 @@
+<!-- ============================================
+     consulta-rapida.html
+     ============================================ -->
+
+<div class="modulo-cabecera">
+  <span class="insignia">∑</span>
+  <div>
+    <h1>Consulta rápida</h1>
+    <p>Fórmulas, prefijos, equivalencias y colores en una sola página.</p>
+  </div>
+</div>
+
+<section class="tarjeta">
+  <h2>Fórmulas</h2>
+  <div class="tabla-contenedor">
+    <table>
+      <thead><tr><th>Tema</th><th>Fórmula</th></tr></thead>
+      <tbody>
+        <tr><td>Carga neta</td><td class="mono">q = (n<sub>p</sub> − n<sub>e</sub>) · e</td></tr>
+        <tr><td>Ley de Coulomb</td><td class="mono">F = k · |q₁ q₂| / r²</td></tr>
+        <tr><td>Constante k</td><td class="mono">k ≈ 8.99 × 10⁹ N·m²/C²</td></tr>
+        <tr><td>Ley de Ohm</td><td class="mono">V = I · R &nbsp;·&nbsp; I = V/R &nbsp;·&nbsp; R = V/I</td></tr>
+        <tr><td>Potencia</td><td class="mono">P = V · I = I² · R = V² / R</td></tr>
+        <tr><td>Serie</td><td class="mono">R<sub>eq</sub> = R₁ + R₂ + …</td></tr>
+        <tr><td>Paralelo (n)</td><td class="mono">1/R<sub>eq</sub> = 1/R₁ + 1/R₂ + …</td></tr>
+        <tr><td>Paralelo (2)</td><td class="mono">R<sub>eq</sub> = (R₁ R₂) / (R₁ + R₂)</td></tr>
+        <tr><td>AND / OR / XOR</td><td class="mono">A·B &nbsp;·&nbsp; A+B &nbsp;·&nbsp; A ⊕ B</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="tarjeta">
+  <h2>Prefijos</h2>
+  <div class="tabla-contenedor">
+    <table>
+      <thead><tr><th>Prefijo</th><th>Símbolo</th><th>Factor</th><th>Ejemplo</th></tr></thead>
+      <tbody>
+        <tr><td>pico</td><td class="mono">p</td><td class="mono">10⁻¹²</td><td>pC</td></tr>
+        <tr><td>nano</td><td class="mono">n</td><td class="mono">10⁻⁹</td><td>nC, nm</td></tr>
+        <tr><td>micro</td><td class="mono">µ</td><td class="mono">10⁻⁶</td><td>µC, µA</td></tr>
+        <tr><td>mili</td><td class="mono">m</td><td class="mono">10⁻³</td><td>mA, mm</td></tr>
+        <tr><td>centi</td><td class="mono">c</td><td class="mono">10⁻²</td><td>cm</td></tr>
+        <tr><td>(unidad)</td><td>—</td><td class="mono">10⁰</td><td>C, m, A, Ω, V</td></tr>
+        <tr><td>kilo</td><td class="mono">k</td><td class="mono">10³</td><td>kΩ, km</td></tr>
+        <tr><td>mega</td><td class="mono">M</td><td class="mono">10⁶</td><td>MΩ</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="tarjeta">
+  <h2>Equivalencias numéricas (0–15)</h2>
+  <div class="tabla-contenedor">
+    <table>
+      <thead><tr><th>Dec</th><th>Bin</th><th>Oct</th><th>Hex</th></tr></thead>
+      <tbody>
+        <tr><td>0</td><td class="mono">0000</td><td>0</td><td>0</td></tr>
+        <tr><td>1</td><td class="mono">0001</td><td>1</td><td>1</td></tr>
+        <tr><td>2</td><td class="mono">0010</td><td>2</td><td>2</td></tr>
+        <tr><td>3</td><td class="mono">0011</td><td>3</td><td>3</td></tr>
+        <tr><td>4</td><td class="mono">0100</td><td>4</td><td>4</td></tr>
+        <tr><td>5</td><td class="mono">0101</td><td>5</td><td>5</td></tr>
+        <tr><td>6</td><td class="mono">0110</td><td>6</td><td>6</td></tr>
+        <tr><td>7</td><td class="mono">0111</td><td>7</td><td>7</td></tr>
+        <tr><td>8</td><td class="mono">1000</td><td>10</td><td>8</td></tr>
+        <tr><td>9</td><td class="mono">1001</td><td>11</td><td>9</td></tr>
+        <tr><td>10</td><td class="mono">1010</td><td>12</td><td>A</td></tr>
+        <tr><td>11</td><td class="mono">1011</td><td>13</td><td>B</td></tr>
+        <tr><td>12</td><td class="mono">1100</td><td>14</td><td>C</td></tr>
+        <tr><td>13</td><td class="mono">1101</td><td>15</td><td>D</td></tr>
+        <tr><td>14</td><td class="mono">1110</td><td>16</td><td>E</td></tr>
+        <tr><td>15</td><td class="mono">1111</td><td>17</td><td>F</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="tarjeta">
+  <h2>Colores de resistencia (4 bandas)</h2>
+  <div class="tabla-contenedor">
+    <table>
+      <thead><tr><th>Color</th><th>Dígito</th><th>Multiplicador</th><th>Tolerancia</th></tr></thead>
+      <tbody>
+        <tr><td>Negro</td><td>0</td><td>× 1</td><td>—</td></tr>
+        <tr><td>Marrón</td><td>1</td><td>× 10</td><td>±1 %</td></tr>
+        <tr><td>Rojo</td><td>2</td><td>× 100</td><td>±2 %</td></tr>
+        <tr><td>Naranja</td><td>3</td><td>× 1 k</td><td>—</td></tr>
+        <tr><td>Amarillo</td><td>4</td><td>× 10 k</td><td>—</td></tr>
+        <tr><td>Verde</td><td>5</td><td>× 100 k</td><td>±0.5 %</td></tr>
+        <tr><td>Azul</td><td>6</td><td>× 1 M</td><td>±0.25 %</td></tr>
+        <tr><td>Violeta</td><td>7</td><td>× 10 M</td><td>±0.1 %</td></tr>
+        <tr><td>Gris</td><td>8</td><td>× 10⁸</td><td>±0.05 %</td></tr>
+        <tr><td>Blanco</td><td>9</td><td>× 10⁹</td><td>—</td></tr>
+        <tr><td>Oro</td><td>—</td><td>× 0.1</td><td>±5 %</td></tr>
+        <tr><td>Plata</td><td>—</td><td>× 0.01</td><td>±10 %</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="tarjeta">
+  <h2>Constantes útiles</h2>
+  <ul>
+    <li>Carga elemental e = 1.602 × 10<sup>−19</sup> C</li>
+    <li>k = 8.99 × 10<sup>9</sup> N·m²/C² (a veces 9 × 10<sup>9</sup>)</li>
+    <li>Cargas iguales se repelen; distintas se atraen</li>
+    <li>En serie: misma I. En paralelo: mismo V</li>
+  </ul>
+</section>
+
+<div class="btn-grupo" style="margin-top:8px">
+  <a class="btn btn-suave" href="#inicio">← Inicio</a>
+  <a class="btn" href="#m1-carga">Empezar por el Módulo 1 →</a>
+</div>

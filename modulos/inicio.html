@@ -1,0 +1,136 @@
+<!-- ============================================
+     inicio.html: portada con accesos a los módulos
+     (main.js lo inserta dentro de <main>)
+     ============================================ -->
+
+<!-- ===== Portada ===== -->
+<section class="portada">
+  <span class="etiqueta">Guía de estudio interactiva · CORHUILA · Ingeniería de Sistemas</span>
+  <h1>Fundamentos de Electrónica</h1>
+  <p>Conceptos breves, fórmulas, ejemplos resueltos paso a paso, calculadoras y simulaciones para estudiar el primer y segundo corte.</p>
+  <a class="btn" href="#m1-carga">Empezar por el Módulo 1 →</a>
+
+  <!-- Circuito animado: batería, resistencia y LED con la corriente fluyendo -->
+  <svg class="portada-circuito" viewBox="0 0 380 240" role="img"
+       aria-label="Circuito con batería, resistencia y LED, con la corriente circulando">
+    <!-- Cables (fijos) -->
+    <g fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M60 105 V60 H140"/>
+      <path d="M220 60 H300 V95"/>
+      <path d="M300 125 V180 H60 V125"/>
+    </g>
+    <!-- Corriente (trazos que se mueven por los cables) -->
+    <g fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path class="flujo" d="M60 105 V60 H140"/>
+      <path class="flujo" d="M220 60 H300 V95"/>
+      <path class="flujo" d="M300 125 V180 H60 V125"/>
+    </g>
+
+    <!-- Batería: placa larga = positivo, placa corta = negativo -->
+    <g stroke="#ffffff" stroke-width="4" stroke-linecap="round">
+      <line x1="42" y1="105" x2="78" y2="105"/>
+      <line x1="50" y1="125" x2="70" y2="125"/>
+    </g>
+    <g fill="#ffffff" font-family="Inter, sans-serif" font-size="16" font-weight="700">
+      <text x="84" y="104">+</text>
+      <text x="84" y="132">−</text>
+    </g>
+    <text x="4" y="160" fill="#ffffff" font-family="Inter, sans-serif" font-size="13" font-weight="600">Batería</text>
+
+    <!-- Resistencia (símbolo rectangular) -->
+    <rect x="140" y="46" width="80" height="28" rx="2" fill="none" stroke="#ffffff" stroke-width="4"/>
+    <text x="180" y="36" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600">R</text>
+
+    <!-- LED: triángulo hacia abajo + barra + flechas de luz -->
+    <polygon points="283,95 317,95 300,125" fill="#fef3c7" stroke="#ffffff" stroke-width="3" stroke-linejoin="round"/>
+    <line x1="283" y1="125" x2="317" y2="125" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+    <g stroke="#fde68a" stroke-width="3" stroke-linecap="round" fill="none">
+      <path d="M326 100 L344 82"/><path d="M338 82 H344 V88"/>
+      <path d="M330 116 L348 98"/><path d="M342 98 H348 V104"/>
+    </g>
+    <text x="326" y="152" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600">LED</text>
+  </svg>
+</section>
+
+<!-- ===== Tarjetas de los módulos ===== -->
+<div style="display:grid; gap:20px; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));">
+
+  <a class="tarjeta tarjeta-modulo elevable" style="margin-bottom:0" href="#m1-carga">
+    <span class="num">1</span>
+    <h3>Carga eléctrica</h3>
+    <p>Cargas positivas y negativas, átomo, iones, atracción y repulsión.</p>
+    <span class="ir">Entrar →</span>
+  </a>
+
+  <a class="tarjeta tarjeta-modulo elevable" style="margin-bottom:0" href="#m2-coulomb">
+    <span class="num">2</span>
+    <h3>Ley de Coulomb</h3>
+    <p>Fuerza entre cargas, fórmula, ejemplos resueltos y calculadora.</p>
+    <span class="ir">Entrar →</span>
+  </a>
+
+  <a class="tarjeta tarjeta-modulo elevable" style="margin-bottom:0" href="#m3-resistencias">
+    <span class="num">3</span>
+    <h3>Resistencias</h3>
+    <p>Código de colores de 4 bandas, serie y paralelo, y herramientas.</p>
+    <span class="ir">Entrar →</span>
+  </a>
+
+  <a class="tarjeta tarjeta-modulo elevable" style="margin-bottom:0" href="#m4-ohm">
+    <span class="num">4</span>
+    <h3>Ley de Ohm</h3>
+    <p>V = I × R, despejes, circuitos en serie, paralelo y mixtos.</p>
+    <span class="ir">Entrar →</span>
+  </a>
+
+  <a class="tarjeta tarjeta-modulo elevable" style="margin-bottom:0" href="#m5-sistemas">
+    <span class="num">5</span>
+    <h3>Sistemas numéricos</h3>
+    <p>Las 12 conversiones entre decimal, binario, octal y hexadecimal.</p>
+    <span class="ir">Entrar →</span>
+  </a>
+
+  <a class="tarjeta tarjeta-modulo elevable" style="margin-bottom:0" href="#m6-binarios">
+    <span class="num">6</span>
+    <h3>Operaciones binarias</h3>
+    <p>Suma, resta y multiplicación en binario, paso a paso.</p>
+    <span class="ir">Entrar →</span>
+  </a>
+
+  <a class="tarjeta tarjeta-modulo elevable" style="margin-bottom:0" href="#m7-logica">
+    <span class="num">7</span>
+    <h3>Puertas lógicas</h3>
+    <p>AND, OR, NOT, NAND, NOR, XOR y XNOR con tablas de verdad y simulador.</p>
+    <span class="ir">Entrar →</span>
+  </a>
+
+  <a class="tarjeta tarjeta-modulo elevable" style="margin-bottom:0" href="#consulta-rapida">
+    <span class="num">∑</span>
+    <h3>Consulta rápida</h3>
+    <p>Fórmulas, prefijos y equivalencias importantes en un solo lugar.</p>
+    <span class="ir">Entrar →</span>
+  </a>
+
+</div>
+
+<!-- ===== Cómo usar la guía ===== -->
+<div class="tarjeta" style="margin-top:24px">
+  <h2>Cómo usar esta guía</h2>
+  <div style="display:grid; gap:20px; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); align-items:start;">
+    <div class="aviso" style="margin:0">
+      <strong>Teoría breve</strong>
+      Cada tema empieza con definiciones cortas y la fórmula que necesitas.
+    </div>
+    <div class="aviso ambar" style="margin:0">
+      <strong>Ejemplos resueltos</strong>
+      Datos, fórmula, sustitución, operaciones y resultado con su unidad.
+    </div>
+    <div class="aviso" style="margin:0">
+      <strong>Herramientas</strong>
+      Calculadoras y simulaciones para comprobar y visualizar los resultados.
+    </div>
+  </div>
+  <p style="margin:12px 0 0;color:var(--texto-suave)">
+    Usa el buscador de arriba para saltar a un tema, por ejemplo: <code>hexadecimal</code>, <code>Ohm</code> o <code>XOR</code>.
+  </p>
+</div>

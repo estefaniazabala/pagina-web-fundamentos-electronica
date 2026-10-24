@@ -1,0 +1,233 @@
+<!-- ============================================
+     m7-logica.html: Módulo 7 · Puertas lógicas
+     ============================================ -->
+
+<div class="modulo-cabecera">
+  <span class="insignia">7</span>
+  <div>
+    <h1>Puertas lógicas</h1>
+    <p>AND, OR, NOT, NAND, NOR, XOR y XNOR: símbolo, expresión y tabla de verdad.</p>
+  </div>
+</div>
+
+<section class="tarjeta">
+  <h2>Qué es una puerta lógica</h2>
+  <div class="aviso">
+    <strong>Definición</strong>
+    Una puerta lógica es un circuito digital que combina señales de <strong>0</strong> (falso, apagado, bajo) y <strong>1</strong> (verdadero, encendido, alto) según una regla.
+  </div>
+  <p>Las expresiones se escriben con A, B, C… El punto (·) o nada significa AND; + significa OR; la barra o ¬ significa NOT.</p>
+</section>
+
+<section class="tarjeta">
+  <h2>Las 7 puertas</h2>
+
+  <article class="ejemplo" id="puerta-and">
+    <div class="ejemplo-titulo">AND · Y lógica</div>
+    <div class="ejemplo-cuerpo">
+      <p>La salida es 1 solo si <strong>todas</strong> las entradas son 1. Expresión: \(Y = A \cdot B\)</p>
+      <div class="rejilla-2">
+        <figure class="figura" style="margin:0">
+          <svg viewBox="0 0 220 120" role="img" aria-label="Símbolo AND">
+            <line x1="20" y1="40" x2="70" y2="40" stroke="#1e293b" stroke-width="3"/>
+            <line x1="20" y1="80" x2="70" y2="80" stroke="#1e293b" stroke-width="3"/>
+            <path d="M70 20 H120 Q170 20 170 60 Q170 100 120 100 H70 Z" fill="#ccfbf1" stroke="#0d9488" stroke-width="3"/>
+            <line x1="170" y1="60" x2="210" y2="60" stroke="#1e293b" stroke-width="3"/>
+            <text x="16" y="36" font-size="12" fill="#64748b">A</text>
+            <text x="16" y="76" font-size="12" fill="#64748b">B</text>
+            <text x="214" y="56" font-size="12" fill="#64748b" text-anchor="end">Y</text>
+          </svg>
+        </figure>
+        <div class="tabla-contenedor" style="margin:0">
+          <table>
+            <thead><tr><th>A</th><th>B</th><th>A·B</th></tr></thead>
+            <tbody>
+              <tr><td>0</td><td>0</td><td>0</td></tr>
+              <tr><td>0</td><td>1</td><td>0</td></tr>
+              <tr><td>1</td><td>0</td><td>0</td></tr>
+              <tr><td>1</td><td>1</td><td>1</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="ejemplo" id="puerta-or">
+    <div class="ejemplo-titulo">OR · O lógica</div>
+    <div class="ejemplo-cuerpo">
+      <p>La salida es 1 si <strong>al menos una</strong> entrada es 1. Expresión: \(Y = A + B\)</p>
+      <div class="aviso ambar" style="margin-top:0">AND exige todas las entradas en 1. OR se conforma con una.</div>
+      <div class="rejilla-2">
+        <figure class="figura" style="margin:0">
+          <svg viewBox="0 0 220 120" role="img" aria-label="Símbolo OR">
+            <line x1="20" y1="40" x2="78" y2="40" stroke="#1e293b" stroke-width="3"/>
+            <line x1="20" y1="80" x2="78" y2="80" stroke="#1e293b" stroke-width="3"/>
+            <path d="M70 20 Q118 60 70 100 Q130 100 170 60 Q130 20 70 20 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+            <line x1="170" y1="60" x2="210" y2="60" stroke="#1e293b" stroke-width="3"/>
+          </svg>
+        </figure>
+        <div class="tabla-contenedor" style="margin:0">
+          <table>
+            <thead><tr><th>A</th><th>B</th><th>A+B</th></tr></thead>
+            <tbody>
+              <tr><td>0</td><td>0</td><td>0</td></tr>
+              <tr><td>0</td><td>1</td><td>1</td></tr>
+              <tr><td>1</td><td>0</td><td>1</td></tr>
+              <tr><td>1</td><td>1</td><td>1</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="ejemplo" id="puerta-not">
+    <div class="ejemplo-titulo">NOT · inversor</div>
+    <div class="ejemplo-cuerpo">
+      <p>Invierte la entrada. Expresión: \(Y = \overline{A}\)</p>
+      <div class="rejilla-2">
+        <figure class="figura" style="margin:0">
+          <svg viewBox="0 0 220 120" role="img" aria-label="Símbolo NOT">
+            <line x1="20" y1="60" x2="70" y2="60" stroke="#1e293b" stroke-width="3"/>
+            <polygon points="70,24 150,60 70,96" fill="#fef3c7" stroke="#d97706" stroke-width="3"/>
+            <circle cx="162" cy="60" r="10" fill="#ffffff" stroke="#d97706" stroke-width="3"/>
+            <line x1="172" y1="60" x2="210" y2="60" stroke="#1e293b" stroke-width="3"/>
+          </svg>
+        </figure>
+        <div class="tabla-contenedor" style="margin:0">
+          <table>
+            <thead><tr><th>A</th><th>NOT A</th></tr></thead>
+            <tbody>
+              <tr><td>0</td><td>1</td></tr>
+              <tr><td>1</td><td>0</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="ejemplo" id="puerta-nand">
+    <div class="ejemplo-titulo">NAND · AND negada</div>
+    <div class="ejemplo-cuerpo">
+      <p>Es un AND seguido de un NOT. Sale 0 solo cuando ambas entradas son 1. \(Y = \overline{A \cdot B}\)</p>
+      <div class="tabla-contenedor">
+        <table>
+          <thead><tr><th>A</th><th>B</th><th>NAND</th></tr></thead>
+          <tbody>
+            <tr><td>0</td><td>0</td><td>1</td></tr>
+            <tr><td>0</td><td>1</td><td>1</td></tr>
+            <tr><td>1</td><td>0</td><td>1</td></tr>
+            <tr><td>1</td><td>1</td><td>0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </article>
+
+  <article class="ejemplo" id="puerta-nor">
+    <div class="ejemplo-titulo">NOR · OR negada</div>
+    <div class="ejemplo-cuerpo">
+      <p>Es un OR seguido de un NOT. Sale 1 solo cuando las dos entradas son 0. \(Y = \overline{A + B}\)</p>
+      <div class="aviso">NAND y NOR son universales: con ellas se puede construir cualquier otra puerta.</div>
+      <div class="tabla-contenedor">
+        <table>
+          <thead><tr><th>A</th><th>B</th><th>NOR</th></tr></thead>
+          <tbody>
+            <tr><td>0</td><td>0</td><td>1</td></tr>
+            <tr><td>0</td><td>1</td><td>0</td></tr>
+            <tr><td>1</td><td>0</td><td>0</td></tr>
+            <tr><td>1</td><td>1</td><td>0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </article>
+
+  <article class="ejemplo" id="puerta-xor">
+    <div class="ejemplo-titulo">XOR · O exclusiva</div>
+    <div class="ejemplo-cuerpo">
+      <p>Sale 1 si las entradas son <strong>distintas</strong>. \(Y = A \oplus B\)</p>
+      <div class="aviso ambar">OR da 1 también cuando A y B son 1. XOR en ese caso da 0: es el “uno u otro, pero no los dos”.</div>
+      <div class="tabla-contenedor">
+        <table>
+          <thead><tr><th>A</th><th>B</th><th>XOR</th></tr></thead>
+          <tbody>
+            <tr><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>0</td><td>1</td><td>1</td></tr>
+            <tr><td>1</td><td>0</td><td>1</td></tr>
+            <tr><td>1</td><td>1</td><td>0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </article>
+
+  <article class="ejemplo" id="puerta-xnor">
+    <div class="ejemplo-titulo">XNOR · equivalencia</div>
+    <div class="ejemplo-cuerpo">
+      <p>Es XOR negada: sale 1 si las entradas son <strong>iguales</strong>. \(Y = \overline{A \oplus B}\)</p>
+      <div class="tabla-contenedor">
+        <table>
+          <thead><tr><th>A</th><th>B</th><th>XNOR</th></tr></thead>
+          <tbody>
+            <tr><td>0</td><td>0</td><td>1</td></tr>
+            <tr><td>0</td><td>1</td><td>0</td></tr>
+            <tr><td>1</td><td>0</td><td>0</td></tr>
+            <tr><td>1</td><td>1</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section class="tarjeta">
+  <h2>Expresión con tres variables</h2>
+  <p>Ejemplo: \(Y = A \cdot B + C\). Primero se hace el AND de A y B, y el resultado se combina en OR con C.</p>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Si A=1, B=0, C=1</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso">A·B = 1·0 = 0</div></div>
+      <div class="paso"><span class="n">2</span><div class="contenido-paso">0 + C = 0 + 1 = 1
+        <div class="resultado">Y = 1</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="tarjeta">
+  <h2>Simulador</h2>
+  <p>Elige la puerta y pulsa los interruptores. La salida se actualiza al instante.</p>
+  <div class="herramienta">
+    <h3>Entradas → salida en vivo</h3>
+    <div class="campo">
+      <label for="log-puerta">Puerta</label>
+      <select id="log-puerta">
+        <option value="AND">AND</option>
+        <option value="OR">OR</option>
+        <option value="NOT">NOT</option>
+        <option value="NAND">NAND</option>
+        <option value="NOR">NOR</option>
+        <option value="XOR">XOR</option>
+        <option value="XNOR">XNOR</option>
+        <option value="ABC">Y = A·B + C</option>
+      </select>
+    </div>
+    <div class="btn-grupo" style="align-items:center">
+      <button type="button" class="switch-logico" id="log-a" aria-pressed="false">A = 0</button>
+      <button type="button" class="switch-logico" id="log-b" aria-pressed="false">B = 0</button>
+      <button type="button" class="switch-logico" id="log-c" aria-pressed="false">C = 0</button>
+      <span style="font-weight:700">→</span>
+      <span class="led-salida" id="log-y">Y = 0</span>
+    </div>
+    <p class="formula-leyenda" id="log-expr" style="margin-top:12px"></p>
+    <div class="salida" id="log-salida" style="font-family:inherit" aria-live="polite"></div>
+  </div>
+</section>
+
+<div class="btn-grupo" style="margin-top:8px">
+  <a class="btn btn-suave" href="#m6-binarios">← Operaciones binarias</a>
+  <a class="btn" href="#consulta-rapida">Consulta rápida →</a>
+</div>

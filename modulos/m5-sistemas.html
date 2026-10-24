@@ -1,0 +1,197 @@
+<!-- ============================================
+     m5-sistemas.html: Módulo 5 · Sistemas numéricos
+     ============================================ -->
+
+<div class="modulo-cabecera">
+  <span class="insignia">5</span>
+  <div>
+    <h1>Sistemas numéricos</h1>
+    <p>Decimal, binario, octal y hexadecimal, con las 12 conversiones.</p>
+  </div>
+</div>
+
+<section class="tarjeta">
+  <h2>Bases y valor posicional</h2>
+  <div class="aviso">
+    <strong>Sistema posicional</strong>
+    El valor de cada dígito depende de su lugar: se multiplica por la base elevada a la potencia de su posición (contando desde la derecha, empezando en 0).
+  </div>
+  <div class="formula">$$N = d_n b^n + \cdots + d_1 b^1 + d_0 b^0$$</div>
+  <div class="tabla-contenedor">
+    <table>
+      <thead>
+        <tr><th>Sistema</th><th>Base</th><th>Dígitos permitidos</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Decimal</td><td class="mono">10</td><td class="mono">0–9</td></tr>
+        <tr><td>Binario</td><td class="mono">2</td><td class="mono">0, 1</td></tr>
+        <tr><td>Octal</td><td class="mono">8</td><td class="mono">0–7</td></tr>
+        <tr><td>Hexadecimal</td><td class="mono">16</td><td class="mono">0–9 y A–F (10 a 15)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Tabla de equivalencias de 0 a 15 (un nibble = 4 bits):</p>
+  <div class="tabla-contenedor">
+    <table>
+      <thead>
+        <tr><th>Dec</th><th>Bin</th><th>Oct</th><th>Hex</th><th>Dec</th><th>Bin</th><th>Oct</th><th>Hex</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>0</td><td class="mono">0000</td><td>0</td><td>0</td><td>8</td><td class="mono">1000</td><td>10</td><td>8</td></tr>
+        <tr><td>1</td><td class="mono">0001</td><td>1</td><td>1</td><td>9</td><td class="mono">1001</td><td>11</td><td>9</td></tr>
+        <tr><td>2</td><td class="mono">0010</td><td>2</td><td>2</td><td>10</td><td class="mono">1010</td><td>12</td><td>A</td></tr>
+        <tr><td>3</td><td class="mono">0011</td><td>3</td><td>3</td><td>11</td><td class="mono">1011</td><td>13</td><td>B</td></tr>
+        <tr><td>4</td><td class="mono">0100</td><td>4</td><td>4</td><td>12</td><td class="mono">1100</td><td>14</td><td>C</td></tr>
+        <tr><td>5</td><td class="mono">0101</td><td>5</td><td>5</td><td>13</td><td class="mono">1101</td><td>15</td><td>D</td></tr>
+        <tr><td>6</td><td class="mono">0110</td><td>6</td><td>6</td><td>14</td><td class="mono">1110</td><td>16</td><td>E</td></tr>
+        <tr><td>7</td><td class="mono">0111</td><td>7</td><td>7</td><td>15</td><td class="mono">1111</td><td>17</td><td>F</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="tarjeta">
+  <h2>Las 12 conversiones (un ejemplo cada una)</h2>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Decimal → binario: 13</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso">Divide entre 2 y anota el resto: 13÷2=6 resto 1; 6÷2=3 r 0; 3÷2=1 r 1; 1÷2=0 r 1.</div></div>
+      <div class="paso"><span class="n">2</span><div class="contenido-paso">Lee los restos de abajo hacia arriba.
+        <div class="resultado">13₁₀ = 1101₂</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Binario → decimal: 1101</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso">1·2³ + 1·2² + 0·2¹ + 1·2⁰ = 8 + 4 + 0 + 1 = 13.
+        <div class="resultado">1101₂ = 13₁₀</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Decimal → octal: 83</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso">83÷8=10 r 3; 10÷8=1 r 2; 1÷8=0 r 1. Restos de abajo arriba: 123.
+        <div class="resultado">83₁₀ = 123₈</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Octal → decimal: 123₈</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso">1·8² + 2·8¹ + 3·8⁰ = 64 + 16 + 3 = 83.
+        <div class="resultado">123₈ = 83₁₀</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Decimal → hexadecimal: 255</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso">255÷16=15 r 15; 15÷16=0 r 15. 15 = F.
+        <div class="resultado">255₁₀ = FF₁₆</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Hexadecimal → decimal: 2A</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso">2·16¹ + 10·16⁰ = 32 + 10 = 42.
+        <div class="resultado">2A₁₆ = 42₁₀</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Binario → octal: 110101</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso">Agrupa de 3 en 3 desde la derecha: 110 101 → 6 y 5.
+        <div class="resultado">110101₂ = 65₈</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Octal → binario: 65₈</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso">Cada dígito a 3 bits: 6=110, 5=101.
+        <div class="resultado">65₈ = 110101₂</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Binario → hexadecimal: 11111111</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso">Agrupa de 4 en 4: 1111 1111 → F F.
+        <div class="resultado">11111111₂ = FF₁₆</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Hexadecimal → binario: 2A</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso">2=0010, A=1010.
+        <div class="resultado">2A₁₆ = 00101010₂</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Octal → hexadecimal: 17₈</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso">Pasa a binario (001 111) y agrupa en 4: 0000 1111 → 0F, o sea F.
+        <div class="resultado">17₈ = F₁₆</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Hexadecimal → octal: A₁₆</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso">A = 1010₂. Agrupa en 3: 001 010 → 12₈.
+        <div class="resultado">A₁₆ = 12₈</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="tarjeta">
+  <h2>Conversor con procedimiento</h2>
+  <p>Escribe el número, elige de qué base a qué base. La herramienta valida los dígitos y muestra los pasos.</p>
+  <div class="herramienta">
+    <h3>Convertir un entero</h3>
+    <div class="campos-fila">
+      <div class="campo">
+        <label for="conv-num">Número</label>
+        <input id="conv-num" type="text" value="13" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="campo">
+        <label for="conv-desde">Desde</label>
+        <select id="conv-desde">
+          <option value="10" selected>Decimal (10)</option>
+          <option value="2">Binario (2)</option>
+          <option value="8">Octal (8)</option>
+          <option value="16">Hexadecimal (16)</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="conv-hacia">Hacia</label>
+        <select id="conv-hacia">
+          <option value="2" selected>Binario (2)</option>
+          <option value="8">Octal (8)</option>
+          <option value="10">Decimal (10)</option>
+          <option value="16">Hexadecimal (16)</option>
+        </select>
+      </div>
+    </div>
+    <div class="btn-grupo">
+      <button type="button" class="btn btn-suave" data-n="13" data-d="10" data-h="2">13 → bin</button>
+      <button type="button" class="btn btn-suave" data-n="2A" data-d="16" data-h="10">2A → dec</button>
+      <button type="button" class="btn btn-suave" data-n="110101" data-d="2" data-h="8">110101 → oct</button>
+      <button type="button" class="btn btn-suave" data-n="FF" data-d="16" data-h="2">FF → bin</button>
+    </div>
+    <div class="mensaje-error" id="conv-error" role="alert"></div>
+    <div class="salida" id="conv-salida" style="font-family:inherit" aria-live="polite"></div>
+  </div>
+</section>
+
+<div class="btn-grupo" style="margin-top:8px">
+  <a class="btn btn-suave" href="#m4-ohm">← Ley de Ohm</a>
+  <a class="btn" href="#m6-binarios">Siguiente: Operaciones binarias →</a>
+</div>

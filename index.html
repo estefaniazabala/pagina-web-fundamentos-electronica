@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos de Electrónica</title>
+  <meta name="description" content="Guía de estudio interactiva de Fundamentos de Electrónica: carga eléctrica, ley de Coulomb, resistencias, ley de Ohm, sistemas numéricos, operaciones binarias y puertas lógicas.">
+
+  <!-- Tipografías (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX: fórmulas matemáticas -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+
+  <!-- Nuestros estilos. El orden importa: primero base, luego layout, luego components -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- ========== BARRA SUPERIOR ========== -->
+  <header class="topbar">
+    <button class="btn-menu" id="btn-menu" aria-label="Abrir o cerrar el menú" aria-controls="sidebar" aria-expanded="false">☰</button>
+
+    <a class="marca" href="#inicio" aria-label="Ir al inicio">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="15" fill="#0d9488"/>
+        <path d="M18 5 L9 18 H15 L13 27 L23 13 H17 Z" fill="#fef3c7"/>
+      </svg>
+      <span>Fundamentos de Electrónica</span>
+    </a>
+
+    <div class="buscador">
+      <input type="search" id="buscador" placeholder="Buscar tema (ej: hexadecimal, Ohm...)" aria-label="Buscar tema" autocomplete="off">
+      <div class="resultados-busqueda" id="resultados" role="listbox"></div>
+    </div>
+  </header>
+
+  <div class="estructura">
+
+    <!-- ========== MENÚ LATERAL ========== -->
+    <aside class="sidebar" id="sidebar">
+      <nav aria-label="Módulos">
+        <a class="enlace-menu" href="#inicio" data-modulo="inicio"><span class="num">⌂</span> Inicio</a>
+
+        <div class="titulo-menu">Módulos</div>
+        <a class="enlace-menu" href="#m1-carga" data-modulo="m1-carga"><span class="num">1</span> Carga eléctrica</a>
+        <a class="enlace-menu" href="#m2-coulomb" data-modulo="m2-coulomb"><span class="num">2</span> Ley de Coulomb</a>
+        <a class="enlace-menu" href="#m3-resistencias" data-modulo="m3-resistencias"><span class="num">3</span> Resistencias</a>
+        <a class="enlace-menu" href="#m4-ohm" data-modulo="m4-ohm"><span class="num">4</span> Ley de Ohm</a>
+        <a class="enlace-menu" href="#m5-sistemas" data-modulo="m5-sistemas"><span class="num">5</span> Sistemas numéricos</a>
+        <a class="enlace-menu" href="#m6-binarios" data-modulo="m6-binarios"><span class="num">6</span> Operaciones binarias</a>
+        <a class="enlace-menu" href="#m7-logica" data-modulo="m7-logica"><span class="num">7</span> Puertas lógicas</a>
+
+        <div class="titulo-menu">Consulta</div>
+        <a class="enlace-menu" href="#consulta-rapida" data-modulo="consulta-rapida"><span class="num">∑</span> Consulta rápida</a>
+      </nav>
+    </aside>
+
+    <!-- ========== ÁREA DE CONTENIDO ========== -->
+    <main class="contenido" id="contenido" tabindex="-1">
+      <!-- main.js reemplaza este mensaje por el módulo elegido -->
+      <p>Cargando...</p>
+    </main>
+
+  </div>
+
+  <!-- ========== SCRIPTS (al final, para que el HTML ya exista) ========== -->
+  <!-- KaTeX -->
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Nuestros scripts. utils.js primero (lo usan los demás) y main.js al final -->
+  <script src="js/utils.js"></script>
+  <script src="js/cargas.js"></script>
+  <script src="js/coulomb.js"></script>
+  <script src="js/resistencias.js"></script>
+  <script src="js/ohm.js"></script>
+  <script src="js/conversiones.js"></script>
+  <script src="js/binarios.js"></script>
+  <script src="js/logica.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

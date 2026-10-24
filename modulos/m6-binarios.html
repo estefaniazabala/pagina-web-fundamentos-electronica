@@ -1,0 +1,115 @@
+<!-- ============================================
+     m6-binarios.html: Módulo 6 · Operaciones binarias
+     ============================================ -->
+
+<div class="modulo-cabecera">
+  <span class="insignia">6</span>
+  <div>
+    <h1>Operaciones binarias</h1>
+    <p>Suma, resta y multiplicación de números binarios, con acarreos y préstamos.</p>
+  </div>
+</div>
+
+<section class="tarjeta">
+  <h2>Reglas</h2>
+  <div class="rejilla-2">
+    <div>
+      <h3>Suma</h3>
+      <div class="tabla-contenedor">
+        <table>
+          <thead><tr><th>Operación</th><th>Resultado</th><th>Acarreo</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">0 + 0</td><td>0</td><td>0</td></tr>
+            <tr><td class="mono">0 + 1</td><td>1</td><td>0</td></tr>
+            <tr><td class="mono">1 + 1</td><td>0</td><td>1</td></tr>
+            <tr><td class="mono">1 + 1 + 1</td><td>1</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <h3>Resta</h3>
+      <div class="tabla-contenedor">
+        <table>
+          <thead><tr><th>Operación</th><th>Resultado</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">0 − 0</td><td>0</td></tr>
+            <tr><td class="mono">1 − 0</td><td>1</td></tr>
+            <tr><td class="mono">1 − 1</td><td>0</td></tr>
+            <tr><td class="mono">0 − 1</td><td>Se pide prestado: 10₂ − 1 = 1, y se resta 1 a la columna de la izquierda</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <p>La <strong>multiplicación</strong> usa las mismas reglas que en decimal, pero más simples: 0 × cualquier cosa = 0, y 1 × un número es el mismo número. Se desplazan los productos parciales y se suman.</p>
+</section>
+
+<section class="tarjeta">
+  <h2>Ejemplos resueltos</h2>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Suma: 1011 + 0110</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso">Alinea a la derecha. Suma bit a bit: 1+0=1; 1+1=0 con acarreo 1; 0+1+1=0 acarreo 1; 1+0+1=0 acarreo 1; queda el acarreo final 1.</div></div>
+      <div class="paso"><span class="n">2</span><div class="contenido-paso">
+        <div class="resultado">1011₂ + 0110₂ = 10001₂ &nbsp;(11 + 6 = 17)</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Resta: 1010 − 0111</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso">0−1 no se puede: se pide prestado. 10−1=1. La siguiente columna queda 0−1 y vuelve a pedir prestado, y así hasta el final.</div></div>
+      <div class="paso"><span class="n">2</span><div class="contenido-paso">
+        <div class="resultado">1010₂ − 0111₂ = 0011₂ &nbsp;(10 − 7 = 3)</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Multiplicación: 101 × 11</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso">101 × 1 = 101. 101 × 1, desplazado un lugar = 1010. Suma: 101 + 1010 = 1111.</div></div>
+      <div class="paso"><span class="n">2</span><div class="contenido-paso">
+        <div class="resultado">101₂ × 11₂ = 1111₂ &nbsp;(5 × 3 = 15)</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="tarjeta">
+  <h2>Visualización paso a paso</h2>
+  <p>Escribe dos números binarios (solo 0 y 1) y elige la operación. Verás acarreos, préstamos o productos parciales, y la comprobación en decimal.</p>
+  <div class="herramienta">
+    <h3>Calculadora binaria</h3>
+    <div class="campos-fila">
+      <div class="campo">
+        <label for="bin-a">Primer número (A)</label>
+        <input id="bin-a" type="text" value="1011" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="campo">
+        <label for="bin-b">Segundo número (B)</label>
+        <input id="bin-b" type="text" value="0110" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="campo">
+        <label for="bin-op">Operación</label>
+        <select id="bin-op">
+          <option value="suma" selected>Suma A + B</option>
+          <option value="resta">Resta A − B</option>
+          <option value="mul">Multiplicación A × B</option>
+        </select>
+      </div>
+    </div>
+    <div class="btn-grupo">
+      <button type="button" class="btn btn-suave" data-a="1011" data-b="0110" data-op="suma">Suma ejemplo</button>
+      <button type="button" class="btn btn-suave" data-a="1010" data-b="0111" data-op="resta">Resta ejemplo</button>
+      <button type="button" class="btn btn-suave" data-a="101" data-b="11" data-op="mul">Multiplicación ejemplo</button>
+    </div>
+    <div class="mensaje-error" id="bin-error" role="alert"></div>
+    <div class="salida" id="bin-salida" style="font-family:inherit" aria-live="polite"></div>
+  </div>
+</section>
+
+<div class="btn-grupo" style="margin-top:8px">
+  <a class="btn btn-suave" href="#m5-sistemas">← Sistemas numéricos</a>
+  <a class="btn" href="#m7-logica">Siguiente: Puertas lógicas →</a>
+</div>

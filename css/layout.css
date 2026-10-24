@@ -1,0 +1,216 @@
+/* ============================================
+   layout.css: distribución general de la página
+   ============================================ */
+
+/* 1. Barra superior fija. */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 64px;
+  padding: 0 20px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--borde);
+}
+
+.topbar .marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--texto);
+  white-space: nowrap;
+}
+
+.topbar .marca svg {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+/* Botón hamburguesa: oculto en computador, visible en celular. */
+.btn-menu {
+  display: none;
+  background: none;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  width: 42px;
+  height: 42px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--texto);
+}
+
+/* 2. Buscador. */
+.buscador {
+  position: relative;
+  margin-left: auto;
+  width: min(340px, 45%);
+}
+
+.buscador input {
+  width: 100%;
+  height: 42px;
+  padding: 0 14px;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--texto);
+  background: var(--fondo);
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  transition: border-color var(--transicion), box-shadow var(--transicion);
+}
+
+.buscador input:focus {
+  outline: none;
+  border-color: var(--turquesa);
+  box-shadow: 0 0 0 3px var(--turquesa-claro);
+}
+
+.resultados-busqueda {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  right: 0;
+  max-height: 320px;
+  overflow-y: auto;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  display: none;
+}
+
+.resultados-busqueda.visible { display: block; }
+
+.resultados-busqueda a {
+  display: block;
+  padding: 10px 14px;
+  color: var(--texto);
+  border-bottom: 1px solid var(--borde);
+}
+
+.resultados-busqueda a:last-child { border-bottom: none; }
+.resultados-busqueda a:hover { background: var(--turquesa-claro); text-decoration: none; }
+
+.resultados-busqueda small {
+  display: block;
+  color: var(--texto-suave);
+}
+
+/* 3. Estructura: barra lateral + contenido. */
+.estructura {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: calc(100vh - 64px);
+}
+
+.sidebar {
+  position: sticky;
+  top: 64px;
+  align-self: start;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  padding: 20px 14px;
+  background: var(--tarjeta);
+  border-right: 1px solid var(--borde);
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar .titulo-menu {
+  margin: 14px 10px 6px;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+
+.enlace-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: var(--texto);
+  font-size: 0.95rem;
+  transition: background var(--transicion), color var(--transicion);
+}
+
+.enlace-menu:hover {
+  background: var(--turquesa-claro);
+  text-decoration: none;
+}
+
+.enlace-menu.activo {
+  background: var(--turquesa);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.enlace-menu .num {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: var(--azul-claro);
+  color: var(--azul);
+  font-family: var(--fuente-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.enlace-menu.activo .num {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* 4. Área de contenido. */
+.contenido {
+  padding: 32px clamp(16px, 4vw, 48px) 64px;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  animation: aparecer 0.35s ease;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 5. Celular y tableta: la barra lateral se vuelve un menú que se desliza. */
+@media (max-width: 900px) {
+  .btn-menu { display: inline-grid; place-items: center; }
+
+  .estructura { grid-template-columns: 1fr; }
+
+  .sidebar {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    bottom: 0;
+    z-index: 40;
+    width: 270px;
+    height: auto;
+    transform: translateX(-100%);
+    transition: transform var(--transicion);
+    box-shadow: var(--sombra);
+  }
+
+  .sidebar.abierta { transform: translateX(0); }
+
+  .topbar .marca span { display: none; }
+  .buscador { width: 100%; }
+}

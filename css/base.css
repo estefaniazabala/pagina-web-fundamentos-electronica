@@ -1,0 +1,98 @@
+/* ============================================
+   base.css: colores, tipografía y fondo general
+   ============================================ */
+
+/* 1. Variables: valores que reutilizamos en toda la página.
+      Si quieres cambiar un color, lo cambias solo aquí. */
+:root {
+  --fondo: #f6f8fc;
+  --tarjeta: #ffffff;
+  --texto: #1e293b;
+  --texto-suave: #64748b;
+  --borde: #e2e8f0;
+
+  --turquesa: #0d9488;
+  --turquesa-claro: #ccfbf1;
+  --azul: #2563eb;
+  --azul-claro: #dbeafe;
+  --ambar: #f59e0b;
+  --ambar-claro: #fef3c7;
+  --error: #dc2626;
+  --error-claro: #fee2e2;
+
+  --fuente-texto: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fuente-mono: "JetBrains Mono", Consolas, "Courier New", monospace;
+
+  --radio: 14px;
+  --sombra: 0 2px 8px rgba(30, 41, 59, 0.06), 0 8px 24px rgba(30, 41, 59, 0.06);
+  --transicion: 0.25s ease;
+}
+
+/* 2. Reinicio: quita los márgenes raros que trae el navegador. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 3. Cuerpo de la página con fondo de cuadrícula tipo protoboard. */
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--texto);
+  background-color: var(--fondo);
+  background-image:
+    linear-gradient(rgba(13, 148, 136, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 148, 136, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* 4. Títulos y párrafos. */
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  margin: 0 0 0.6em;
+  color: var(--texto);
+}
+
+h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); }
+h3 { font-size: 1.2rem; }
+
+p { margin: 0 0 1em; }
+
+a {
+  color: var(--azul);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* 5. Números, fórmulas y código con letra monoespaciada. */
+code, kbd, .mono {
+  font-family: var(--fuente-mono);
+  font-size: 0.92em;
+  background: var(--azul-claro);
+  color: #1e3a8a;
+  padding: 0.1em 0.4em;
+  border-radius: 6px;
+}
+
+/* 6. Accesibilidad: borde visible al navegar con teclado. */
+:focus-visible {
+  outline: 3px solid var(--ambar);
+  outline-offset: 2px;
+}
+
+/* 7. Si la persona prefiere menos animaciones, las reducimos. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

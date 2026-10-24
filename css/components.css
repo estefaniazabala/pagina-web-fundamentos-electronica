@@ -1,0 +1,437 @@
+ /* ============================================
+   components.css: piezas reutilizables
+   ============================================ */
+
+/* 1. Encabezado de cada módulo. */
+.modulo-cabecera {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.modulo-cabecera .insignia {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--turquesa), var(--azul));
+  color: #ffffff;
+  font-family: var(--fuente-mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.modulo-cabecera h1 { margin: 0; }
+.modulo-cabecera p { margin: 0; color: var(--texto-suave); }
+
+/* 2. Tarjetas. */
+.tarjeta {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 24px;
+  margin-bottom: 24px;
+  transition: transform var(--transicion), box-shadow var(--transicion);
+}
+
+.tarjeta > h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  border-bottom: 2px solid var(--turquesa-claro);
+}
+
+.tarjeta > h2::before {
+  content: "";
+  width: 6px;
+  height: 1.1em;
+  border-radius: 3px;
+  background: var(--turquesa);
+}
+
+.tarjeta.elevable:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(30, 41, 59, 0.12);
+}
+
+/* 3. Rejillas. */
+.rejilla {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.rejilla-2 {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: start;
+}
+
+/* 4. Botones. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #ffffff;
+  background: var(--turquesa);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background var(--transicion), transform var(--transicion);
+}
+
+.btn:hover { background: #0f766e; text-decoration: none; transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+.btn-secundario {
+  color: var(--azul);
+  background: var(--azul-claro);
+}
+.btn-secundario:hover { background: #bfdbfe; }
+
+.btn-suave {
+  color: var(--texto);
+  background: var(--fondo);
+  border: 1px solid var(--borde);
+}
+.btn-suave:hover { background: var(--turquesa-claro); }
+
+.btn-grupo { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+
+/* 5. Tablas. */
+.tabla-contenedor {
+  overflow-x: auto;
+  margin: 16px 0;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+th {
+  background: var(--turquesa);
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px 14px;
+  white-space: nowrap;
+}
+
+td {
+  padding: 9px 14px;
+  text-align: center;
+  border-top: 1px solid var(--borde);
+}
+
+tbody tr:nth-child(even) { background: #f8fafc; }
+tbody tr:hover { background: var(--turquesa-claro); }
+
+td.mono, .tabla-contenedor .mono { font-family: var(--fuente-mono); }
+
+/* 6. Fórmulas. */
+.formula {
+  margin: 16px 0;
+  padding: 18px 20px;
+  text-align: center;
+  font-size: 1.25rem;
+  background: var(--azul-claro);
+  border-left: 5px solid var(--azul);
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.formula-leyenda {
+  margin: -6px 0 16px;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+/* 7. Avisos: definición, importante, error. */
+.aviso {
+  margin: 16px 0;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border-left: 5px solid var(--turquesa);
+  background: var(--turquesa-claro);
+}
+.aviso.ambar { border-left-color: var(--ambar); background: var(--ambar-claro); }
+.aviso.error { border-left-color: var(--error); background: var(--error-claro); }
+.aviso strong:first-child { display: block; margin-bottom: 2px; }
+.aviso > :last-child { margin-bottom: 0; }
+
+/* 8. Ejemplos resueltos paso a paso. */
+.ejemplo {
+  margin: 20px 0;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.ejemplo-titulo {
+  padding: 10px 16px;
+  font-weight: 700;
+  color: #78350f;
+  background: var(--ambar-claro);
+  border-bottom: 1px solid var(--borde);
+}
+
+.ejemplo-cuerpo { padding: 8px 16px 16px; }
+
+.paso {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--borde);
+}
+.paso:last-child { border-bottom: none; }
+
+.paso .n {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--turquesa);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.paso .contenido-paso > :last-child { margin-bottom: 0; }
+.paso .rotulo { font-weight: 700; color: var(--turquesa); }
+
+.resultado {
+  margin-top: 8px;
+  padding: 10px 14px;
+  font-family: var(--fuente-mono);
+  font-weight: 700;
+  background: var(--turquesa-claro);
+  border-radius: 8px;
+}
+
+/* 9. Calculadoras y simulaciones. */
+.herramienta {
+  margin: 20px 0;
+  padding: 20px;
+  background: linear-gradient(180deg, #f0fdfa, #ffffff);
+  border: 2px solid var(--turquesa-claro);
+  border-radius: var(--radio);
+}
+
+.herramienta > h3 { display: flex; align-items: center; gap: 8px; }
+.herramienta > h3::before { content: "⚙"; color: var(--turquesa); }
+
+.campo { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+.campo label { font-size: 0.85rem; font-weight: 600; color: var(--texto-suave); }
+
+.campo input,
+.campo select {
+  height: 42px;
+  padding: 0 12px;
+  font: inherit;
+  font-family: var(--fuente-mono);
+  color: var(--texto);
+  background: #ffffff;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  transition: border-color var(--transicion), box-shadow var(--transicion);
+}
+
+.campo input:focus,
+.campo select:focus {
+  outline: none;
+  border-color: var(--turquesa);
+  box-shadow: 0 0 0 3px var(--turquesa-claro);
+}
+
+.campo input.invalido { border-color: var(--error); box-shadow: 0 0 0 3px var(--error-claro); }
+
+.campos-fila {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.mensaje-error {
+  margin-top: 10px;
+  padding: 10px 14px;
+  color: #991b1b;
+  background: var(--error-claro);
+  border-radius: 8px;
+  font-size: 0.92rem;
+}
+.mensaje-error:empty { display: none; }
+
+.salida {
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: #ffffff;
+  border: 1px dashed var(--turquesa);
+  border-radius: 10px;
+  font-family: var(--fuente-mono);
+  overflow-x: auto;
+}
+.salida:empty { display: none; }
+
+/* 10. Ilustraciones SVG. */
+.figura {
+  margin: 16px 0;
+  padding: 16px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+}
+.figura svg { max-width: 100%; height: auto; }
+.figura figcaption { margin-top: 8px; font-size: 0.88rem; color: var(--texto-suave); }
+
+/* 11. Portada. */
+.portada {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 28px;
+  padding: clamp(24px, 5vw, 48px);
+  color: #ffffff;
+  background: linear-gradient(135deg, #0d9488 0%, #2563eb 100%);
+  border-radius: 20px;
+  box-shadow: var(--sombra);
+}
+.portada h1 { color: #ffffff; max-width: 18ch; }
+.portada p { max-width: 52ch; opacity: 0.95; }
+.portada .etiqueta {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+}
+.portada .btn { color: var(--turquesa); background: #ffffff; }
+.portada .btn:hover { background: var(--ambar-claro); }
+
+.portada-circuito {
+  position: absolute;
+  right: 3%;
+  bottom: 8%;
+  width: min(380px, 42%);
+  opacity: 0.9;
+}
+
+/* Corriente que fluye por los cables de la portada. */
+.flujo {
+  stroke-dasharray: 8 10;
+  animation: fluir 1.2s linear infinite;
+}
+@keyframes fluir { to { stroke-dashoffset: -18; } }
+
+/* 12. Tarjetas de módulo (inicio). */
+.tarjeta-modulo { display: flex; flex-direction: column; gap: 8px; color: var(--texto); }
+.tarjeta-modulo:hover { text-decoration: none; }
+.tarjeta-modulo .num {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--azul-claro);
+  color: var(--azul);
+  font-family: var(--fuente-mono);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.tarjeta-modulo h3 { margin: 4px 0 0; }
+.tarjeta-modulo p { margin: 0; color: var(--texto-suave); font-size: 0.93rem; }
+.tarjeta-modulo .ir { margin-top: auto; font-weight: 600; color: var(--turquesa); }
+
+/* 13. Módulos en construcción. */
+.en-construccion {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--texto-suave);
+}
+.en-construccion .icono { font-size: 2.5rem; }
+
+/* 14. Resistencia dibujada (código de colores). */
+.resistor-svg { max-width: 420px; margin: 0 auto; display: block; }
+.muestra-color {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid rgba(15, 23, 42, 0.25);
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+/* 15. Interruptores del simulador lógico. */
+.switch-logico {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  background: #ffffff;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: var(--fuente-mono);
+}
+.switch-logico[aria-pressed="true"] {
+  background: var(--turquesa-claro);
+  border-color: var(--turquesa);
+  color: #115e59;
+}
+.led-salida {
+  display: inline-grid;
+  place-items: center;
+  min-width: 72px;
+  height: 42px;
+  border-radius: 10px;
+  font-family: var(--fuente-mono);
+  font-weight: 700;
+  background: #e2e8f0;
+  color: #475569;
+}
+.led-salida.encendida {
+  background: #0d9488;
+  color: #ffffff;
+  box-shadow: 0 0 16px rgba(13, 148, 136, 0.45);
+}
+
+/* 16. Pasos de operaciones binarias. */
+.binario-grid {
+  display: inline-grid;
+  gap: 4px 10px;
+  font-family: var(--fuente-mono);
+  font-size: 1.05rem;
+  justify-items: center;
+}
+.binario-grid .marca { color: var(--turquesa); font-size: 0.75rem; }
+.binario-grid .acarreo { color: var(--azul); font-size: 0.8rem; }
+.binario-grid .linea { grid-column: 1 / -1; border-top: 2px solid var(--texto); width: 100%; height: 0; }
+
+/* 17. Pantallas pequeñas. */
+@media (max-width: 700px) {
+  .portada-circuito { display: none; }
+  .tarjeta { padding: 18px; }
+  .formula { font-size: 1.05rem; }
+}

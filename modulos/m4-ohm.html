@@ -1,0 +1,166 @@
+<!-- ============================================
+     m4-ohm.html: Módulo 4 · Ley de Ohm
+     ============================================ -->
+
+<div class="modulo-cabecera">
+  <span class="insignia">4</span>
+  <div>
+    <h1>Ley de Ohm</h1>
+    <p>Relación entre voltaje, corriente y resistencia, con despejes y circuitos.</p>
+  </div>
+</div>
+
+<section class="tarjeta">
+  <h2>La ley</h2>
+  <div class="aviso">
+    <strong>Ley de Ohm</strong>
+    En un conductor óhmico, la corriente es proporcional al voltaje e inversamente proporcional a la resistencia.
+  </div>
+  <div class="formula">$$V = I \cdot R$$</div>
+  <div class="tabla-contenedor">
+    <table>
+      <thead>
+        <tr><th>Si conoces</th><th>Y quieres</th><th>Usa</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>I y R</td><td>V</td><td class="mono">V = I · R</td></tr>
+        <tr><td>V y R</td><td>I</td><td class="mono">I = V / R</td></tr>
+        <tr><td>V y I</td><td>R</td><td class="mono">R = V / I</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>El <strong>triángulo de Ohm</strong> ayuda a recordar los despejes: cubre la letra que buscas. Arriba queda V; abajo, I y R.</p>
+  <figure class="figura">
+    <svg viewBox="0 0 280 180" role="img" aria-label="Triángulo de Ohm: V arriba, I y R abajo">
+      <polygon points="140,18 262,162 18,162" fill="#ccfbf1" stroke="#0d9488" stroke-width="4"/>
+      <line x1="50" y1="100" x2="230" y2="100" stroke="#0d9488" stroke-width="3"/>
+      <line x1="140" y1="100" x2="140" y2="162" stroke="#0d9488" stroke-width="3"/>
+      <text x="140" y="78" text-anchor="middle" font-size="32" font-weight="700" font-family="Inter, sans-serif" fill="#0f766e">V</text>
+      <text x="88" y="142" text-anchor="middle" font-size="32" font-weight="700" font-family="Inter, sans-serif" fill="#0f766e">I</text>
+      <text x="192" y="142" text-anchor="middle" font-size="32" font-weight="700" font-family="Inter, sans-serif" fill="#0f766e">R</text>
+    </svg>
+    <figcaption>Cubre V → I·R. Cubre I → V/R. Cubre R → V/I.</figcaption>
+  </figure>
+  <div class="aviso ambar">
+    <strong>Unidades</strong>
+    Voltaje en voltios (V), corriente en amperios (A) y resistencia en ohmios (Ω). Convierte mA, kΩ, etc. antes de operar.
+  </div>
+</section>
+
+<section class="tarjeta">
+  <h2>Serie, paralelo y mixto (con Ohm)</h2>
+  <p>En <strong>serie</strong> hay una sola corriente. En <strong>paralelo</strong> hay un solo voltaje en cada rama. En un <strong>mixto</strong> se calcula primero R<sub>eq</sub> y luego se aplica Ohm al conjunto o a cada tramo.</p>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Ejemplo 1: hallar el voltaje</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso"><span class="rotulo">Datos.</span> I = 2 A, R = 10 Ω. Se pide V.</div></div>
+      <div class="paso"><span class="n">2</span><div class="contenido-paso"><span class="rotulo">Fórmula.</span> V = I · R</div></div>
+      <div class="paso"><span class="n">3</span><div class="contenido-paso"><span class="rotulo">Operaciones.</span> V = 2 × 10 = 20
+        <div class="resultado">V = 20 V</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Ejemplo 2: hallar la corriente</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso"><span class="rotulo">Datos.</span> V = 12 V, R = 4 Ω. Se pide I.</div></div>
+      <div class="paso"><span class="n">2</span><div class="contenido-paso"><span class="rotulo">Fórmula.</span> I = V / R</div></div>
+      <div class="paso"><span class="n">3</span><div class="contenido-paso"><span class="rotulo">Operaciones.</span> I = 12 / 4 = 3
+        <div class="resultado">I = 3 A</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Ejemplo 3: hallar la resistencia (mA)</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso"><span class="rotulo">Datos.</span> V = 9 V, I = 3 mA. Se pide R.</div></div>
+      <div class="paso"><span class="n">2</span><div class="contenido-paso"><span class="rotulo">Conversión.</span> 3 mA = 0.003 A.</div></div>
+      <div class="paso"><span class="n">3</span><div class="contenido-paso"><span class="rotulo">Fórmula.</span> R = V / I = 9 / 0.003 = 3000
+        <div class="resultado">R = 3000 Ω = 3 kΩ</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Ejemplo 4: dos resistencias en serie</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso"><span class="rotulo">Datos.</span> V = 24 V, R₁ = 100 Ω, R₂ = 300 Ω en serie. Se pide la corriente y el voltaje en cada una.</div></div>
+      <div class="paso"><span class="n">2</span><div class="contenido-paso"><span class="rotulo">Equivalente.</span> R<sub>eq</sub> = 100 + 300 = 400 Ω.</div></div>
+      <div class="paso"><span class="n">3</span><div class="contenido-paso"><span class="rotulo">Corriente (la misma).</span> I = 24 / 400 = 0.06 A = 60 mA.</div></div>
+      <div class="paso"><span class="n">4</span><div class="contenido-paso"><span class="rotulo">Voltajes.</span> V₁ = 0.06 × 100 = 6 V; V₂ = 0.06 × 300 = 18 V.
+        <div class="resultado">I = 60 mA &nbsp;·&nbsp; V₁ = 6 V &nbsp;·&nbsp; V₂ = 18 V</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="ejemplo-titulo">Ejemplo 5: paralelo</div>
+    <div class="ejemplo-cuerpo">
+      <div class="paso"><span class="n">1</span><div class="contenido-paso"><span class="rotulo">Datos.</span> V = 12 V, R₁ = 12 Ω y R₂ = 6 Ω en paralelo.</div></div>
+      <div class="paso"><span class="n">2</span><div class="contenido-paso"><span class="rotulo">Corrientes.</span> I₁ = 12/12 = 1 A; I₂ = 12/6 = 2 A. Total: 3 A.</div></div>
+      <div class="paso"><span class="n">3</span><div class="contenido-paso"><span class="rotulo">Comprobación.</span> R<sub>eq</sub> = 4 Ω (Módulo 3). I = 12/4 = 3 A.
+        <div class="resultado">I total = 3 A</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="tarjeta">
+  <h2>Calculadora de Ohm</h2>
+  <p>Deja <strong>un campo vacío</strong> (el que quieres hallar) y llena los otros dos, con sus unidades.</p>
+  <div class="herramienta">
+    <h3>V, I y R: halla el que falta</h3>
+    <div class="campos-fila">
+      <div class="campo">
+        <label for="ohm-v">Voltaje V</label>
+        <input id="ohm-v" type="text" inputmode="decimal" value="" autocomplete="off" placeholder="vacío = calcular">
+      </div>
+      <div class="campo">
+        <label for="ohm-vu">Unidad de V</label>
+        <select id="ohm-vu">
+          <option value="1" selected>V</option>
+          <option value="1e-3">mV</option>
+          <option value="1e3">kV</option>
+        </select>
+      </div>
+    </div>
+    <div class="campos-fila">
+      <div class="campo">
+        <label for="ohm-i">Corriente I</label>
+        <input id="ohm-i" type="text" inputmode="decimal" value="2" autocomplete="off">
+      </div>
+      <div class="campo">
+        <label for="ohm-iu">Unidad de I</label>
+        <select id="ohm-iu">
+          <option value="1" selected>A</option>
+          <option value="1e-3">mA</option>
+          <option value="1e-6">µA</option>
+        </select>
+      </div>
+    </div>
+    <div class="campos-fila">
+      <div class="campo">
+        <label for="ohm-r">Resistencia R</label>
+        <input id="ohm-r" type="text" inputmode="decimal" value="10" autocomplete="off">
+      </div>
+      <div class="campo">
+        <label for="ohm-ru">Unidad de R</label>
+        <select id="ohm-ru">
+          <option value="1" selected>Ω</option>
+          <option value="1e3">kΩ</option>
+          <option value="1e6">MΩ</option>
+        </select>
+      </div>
+    </div>
+    <div class="btn-grupo">
+      <button type="button" class="btn btn-suave" data-v="" data-i="2" data-r="10" data-vu="1" data-iu="1" data-ru="1">Ejemplo V</button>
+      <button type="button" class="btn btn-suave" data-v="12" data-i="" data-r="4" data-vu="1" data-iu="1" data-ru="1">Ejemplo I</button>
+      <button type="button" class="btn btn-suave" data-v="9" data-i="3" data-r="" data-vu="1" data-iu="1e-3" data-ru="1">Ejemplo R</button>
+    </div>
+    <div class="mensaje-error" id="ohm-error" role="alert"></div>
+    <div class="salida" id="ohm-salida" style="font-family:inherit" aria-live="polite"></div>
+  </div>
+</section>
+
+<div class="btn-grupo" style="margin-top:8px">
+  <a class="btn btn-suave" href="#m3-resistencias">← Resistencias</a>
+  <a class="btn" href="#m5-sistemas">Siguiente: Sistemas numéricos →</a>
+</div>
